@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Crecimiento — Alma de Barro × Rappi MX</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --neon-start: #fe663d;
+    --neon-end: #ff3d55;
+    --neon-gradient: linear-gradient(135deg, #fe663d, #ff3d55);
+    --beige: #fff0dd;
+    --blue-pastel: #d9f1ff;
+    --pink-pastel: #f4dff6;
+    --purple-pastel: #e5dcff;
+    --text-dark: #1a0a05;
+    --text-brown: #633d11;
+    --text-purple: #4c2b8c;
+    --text-blue: #0f3749;
+    --green-ok: #083410;
+    --green-bg: #e6f5e4;
+    --amber: #fe663d;
+    --red-alert: #ff3d55;
+    --white: #ffffff;
+    --gray-light: #f8f6f3;
+    --gray-mid: #e8e4de;
+    --gray-text: #7a6e65;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f5f2ee;
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #fe663d 0%, #ff3d55 100%);
+    padding: 48px 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+  .logo-rappi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mostacho {
+    width: 36px; height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .logo-text {
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+  .logo-aliado {
+    background: rgba(255,255,255,0.18);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    border-radius: 24px;
+    padding: 8px 18px;
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+  }
+  .header-title {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-title span {
+    opacity: 0.75;
+    font-weight: 300;
+    font-size: 18px;
+    display: block;
+    letter-spacing: 0;
+    margin-bottom: 6px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-meta-item {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 5px 14px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ── LAYOUT ── */
+  .main { padding: 36px 48px 60px; max-width: 1100px; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--neon-start);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-mid);
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--text-dark);
+    letter-spacing: -0.4px;
+    margin-bottom: 16px;
+  }
+
+  /* ── KPI STRIP ── */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .kpi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px 20px;
+    border: 1.5px solid var(--gray-mid);
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi-card.accent-neon {
+    background: linear-gradient(135deg, #fe663d, #ff3d55);
+    border-color: transparent;
+  }
+  .kpi-card.accent-neon .kpi-label,
+  .kpi-card.accent-neon .kpi-val,
+  .kpi-card.accent-neon .kpi-delta { color: white !important; }
+  .kpi-card.accent-beige { background: var(--beige); border-color: #ead5b8; }
+  .kpi-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 6px;
+  }
+  .kpi-val {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kpi-delta {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .delta-up { color: var(--green-ok); }
+  .delta-down { color: var(--red-alert); }
+  .delta-warn { color: var(--amber); }
+
+  /* ── ESTADO OPERATIVO ── */
+  .ops-table {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+  .ops-table-header {
+    background: var(--beige);
+    padding: 12px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--text-brown);
+  }
+  .ops-table-row {
+    padding: 13px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    align-items: center;
+    border-top: 1px solid var(--gray-mid);
+    font-size: 13px;
+  }
+  .ops-table-row:hover { background: #fafaf8; }
+  .metric-name { font-weight: 700; color: var(--text-dark); }
+  .val-cell { font-weight: 800; font-size: 14px; }
+  .target-cell { font-size: 12px; color: var(--gray-text); font-weight: 600; }
+  .badge-ok {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--green-bg);
+    color: var(--green-ok);
+    font-size: 11px; font-weight: 800;
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .badge-warn {
+    background: #fff3e6;
+    color: #c45a00;
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 800;
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .badge-alert {
+    background: #ffe8ec;
+    color: var(--red-alert);
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; font-weight: 800;
+    padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* ── BRECHAS ── */
+  .gaps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .gap-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 22px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gap-card.critical { border-left: 5px solid var(--red-alert); }
+  .gap-card.important { border-left: 5px solid var(--amber); }
+  .gap-card.positive { border-left: 5px solid #1D9E75; }
+  .priority-badge {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .pb-critical { background: #ffe8ec; color: #c0002a; }
+  .pb-important { background: #fff3e6; color: #c45a00; }
+  .pb-positive { background: var(--green-bg); color: var(--green-ok); }
+  .gap-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .gap-desc {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    color: var(--text-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+  .impact-bar-bg {
+    background: var(--gray-mid);
+    border-radius: 4px;
+    height: 5px;
+    margin-top: 14px;
+    overflow: hidden;
+  }
+  .impact-bar-fill {
+    height: 5px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--neon-start), var(--neon-end));
+  }
+
+  /* ── STORES ── */
+  .stores-section {
+    margin-bottom: 36px;
+  }
+  .stores-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .store-card {
+    background: white;
+    border-radius: 14px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 16px 14px;
+    text-align: center;
+  }
+  .store-card.top-oro { border-top: 4px solid #f5c842; }
+  .store-card.top-plata { border-top: 4px solid #adb5bd; }
+  .store-card.basico { border-top: 4px solid var(--gray-mid); }
+  .store-card.alerta { border-top: 4px solid var(--red-alert); }
+  .store-name {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .store-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .sb-oro { background: #fef9e7; color: #856404; }
+  .sb-plata { background: #f1f3f4; color: #555; }
+  .sb-basico { background: #f5f5f5; color: #888; }
+  .sb-alerta { background: #ffe8ec; color: #c0002a; }
+  .store-metric { font-size: 20px; font-weight: 900; color: var(--text-dark); margin-bottom: 2px; }
+  .store-sublabel { font-size: 10px; color: var(--gray-text); font-weight: 600; margin-bottom: 6px; }
+  .store-mini-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--gray-text);
+    border-top: 1px solid var(--gray-mid);
+    padding-top: 8px;
+    margin-top: 6px;
+  }
+  .store-mini-val { font-weight: 700; color: var(--text-dark); }
+
+  /* ── PLAN 30/60/90 ── */
+  .plan-section { margin-bottom: 36px; }
+  .plan-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .plan-col {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    overflow: hidden;
+  }
+  .plan-col-header {
+    padding: 14px 18px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: -0.3px;
+  }
+  .plan-col-header.h30 { background: linear-gradient(135deg, #fe663d, #ff3d55); color: white; }
+  .plan-col-header.h60 { background: var(--beige); color: var(--text-brown); }
+  .plan-col-header.h90 { background: var(--purple-pastel); color: var(--text-purple); }
+  .plan-col-header span { display: block; font-size: 10px; font-weight: 700; opacity: 0.75; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
+  .plan-items { padding: 10px 0; }
+  .plan-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+  .plan-item:last-child { border-bottom: none; }
+  .plan-num {
+    min-width: 22px; height: 22px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 900;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .pn-30 { background: linear-gradient(135deg, #fe663d, #ff3d55); color: white; }
+  .pn-60 { background: var(--beige); color: var(--text-brown); border: 1.5px solid #ead5b8; }
+  .pn-90 { background: var(--purple-pastel); color: var(--text-purple); }
+  .plan-text { font-size: 12.5px; color: var(--text-dark); font-weight: 600; line-height: 1.4; }
+  .plan-impact {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--gray-text);
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+
+  /* ── METAS ── */
+  .metas-section {
+    background: linear-gradient(135deg, #fe663d 0%, #ff3d55 100%);
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .metas-section::before {
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 250px; height: 250px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .metas-title {
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 6px;
+    position: relative; z-index: 1;
+  }
+  .metas-subtitle {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 24px;
+    font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .metas-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    position: relative; z-index: 1;
+  }
+  .meta-card {
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+  }
+  .meta-label { font-size: 10px; color: rgba(255,255,255,0.75); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+  .meta-val { font-size: 26px; font-weight: 900; color: white; letter-spacing: -0.5px; }
+  .meta-from { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; font-weight: 600; }
+
+  /* ── USUARIOS ── */
+  .users-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .user-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 22px 24px;
+  }
+  .user-card-title {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  .lifecycle-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+  .lifecycle-row:last-child { border-bottom: none; }
+  .lc-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .lc-label { flex: 1; font-size: 13px; font-weight: 700; color: var(--text-dark); }
+  .lc-count { font-size: 18px; font-weight: 900; color: var(--text-dark); min-width: 50px; text-align: right; }
+  .lc-pct { font-size: 12px; color: var(--gray-text); font-weight: 700; min-width: 40px; text-align: right; }
+  .lc-delta-up { color: var(--green-ok); font-size: 11px; font-weight: 800; min-width: 55px; text-align: right; }
+  .lc-delta-down { color: var(--red-alert); font-size: 11px; font-weight: 800; min-width: 55px; text-align: right; }
+
+  /* ── PRODUCTOS TOP ── */
+  .productos-section { margin-bottom: 36px; }
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .producto-card {
+    background: white;
+    border-radius: 12px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 14px 12px;
+  }
+  .producto-rank {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--neon-start);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin-bottom: 4px;
+  }
+  .producto-name {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .producto-piezas { font-size: 20px; font-weight: 900; color: var(--text-dark); }
+  .producto-piezas-label { font-size: 10px; color: var(--gray-text); font-weight: 600; margin-bottom: 4px; }
+  .producto-delta { font-size: 11px; font-weight: 800; }
+
+  /* ── INVESTMENT ── */
+  .investment-section { margin-bottom: 36px; }
+  .invest-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .invest-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 22px 24px;
+  }
+  .invest-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--gray-mid);
+    font-size: 13px;
+  }
+  .invest-row:last-child { border-bottom: none; }
+  .invest-key { font-weight: 600; color: var(--gray-text); }
+  .invest-val { font-weight: 900; color: var(--text-dark); }
+
+  /* ── MARKET SHARE ── */
+  .ms-section { margin-bottom: 36px; }
+  .ms-card {
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid var(--gray-mid);
+    padding: 22px 24px;
+  }
+  .ms-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .ms-label { min-width: 60px; font-weight: 700; color: var(--gray-text); }
+  .ms-bar-bg { flex: 1; background: var(--gray-mid); border-radius: 4px; height: 18px; overflow: hidden; }
+  .ms-bar-fill { height: 18px; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; font-size: 11px; font-weight: 800; color: white; }
+  .ms-val { min-width: 45px; text-align: right; font-weight: 900; color: var(--text-dark); font-size: 14px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--text-dark);
+    padding: 24px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo { color: white; font-weight: 900; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+  .footer-note { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 600; }
+  .footer-badge {
+    background: linear-gradient(135deg, #fe663d, #ff3d55);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--gray-mid); margin: 36px 0; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="logo-rappi">
+      <div class="mostacho">🥸</div>
+      <span class="logo-text">rappi</span>
+    </div>
+    <div class="logo-aliado">× Alma de Barro</div>
+  </div>
+  <div class="header-title">
+    <span>Plan de Crecimiento</span>
+    ALMA DE BARRO<br>EN RAPPI MX
+  </div>
+  <div class="header-meta">
+    <div class="header-meta-item">📅 Mayo – Agosto 2026</div>
+    <div class="header-meta-item">📍 Ciudad de México</div>
+    <div class="header-meta-item">🏪 6 sucursales</div>
+    <div class="header-meta-item">🍲 Pozole y Caldos</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- KPIs ACTUALES -->
+  <div class="section-label">Situación actual — mayo 2026</div>
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <div class="kpi-label">Venta Neta MTD</div>
+      <div class="kpi-val">$174K</div>
+      <div class="kpi-delta delta-down">▼ 4.6% vs abr · ▲ 20.4% vs LY</div>
+    </div>
+    <div class="kpi-card accent-neon">
+      <div class="kpi-label">Órdenes</div>
+      <div class="kpi-val">660</div>
+      <div class="kpi-delta">▲ 19.8% vs abril</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Ticket Promedio (AOV)</div>
+      <div class="kpi-val">$264</div>
+      <div class="kpi-delta delta-down">▼ 20.4% vs abr · ▼ 17.3% vs LY</div>
+    </div>
+    <div class="kpi-card accent-beige">
+      <div class="kpi-label">Usuarios activos</div>
+      <div class="kpi-val">591</div>
+      <div class="kpi-delta delta-up">▲ 3.3% vs abril</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Conversión (brand)</div>
+      <div class="kpi-val">24.9%</div>
+      <div class="kpi-delta delta-up">BM general: 12.1% ✓</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Defect Rate</div>
+      <div class="kpi-val">1.40%</div>
+      <div class="kpi-delta delta-down">Target máx. 1.2% ✗</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Availability</div>
+      <div class="kpi-val">99.9%</div>
+      <div class="kpi-delta delta-up">▲ vs 89.5% en abril ✓</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Tiempo de entrega</div>
+      <div class="kpi-val">49.6<span style="font-size:16px;font-weight:700">min</span></div>
+      <div class="kpi-delta delta-down">Target: 30 min ✗</div>
+    </div>
+  </div>
+
+  <!-- ESTADO OPERATIVO -->
+  <div class="section-label">Estado operativo vs objetivos Rappi</div>
+  <div class="ops-table">
+    <div class="ops-table-header">
+      <div>Métrica</div>
+      <div>Abr</div>
+      <div>May</div>
+      <div>Target</div>
+      <div>Estado</div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">% Availability</div>
+      <div class="val-cell">89.5%</div>
+      <div class="val-cell">99.9%</div>
+      <div class="target-cell">≥ 98%</div>
+      <div><span class="badge-ok">✓ OK</span></div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">% Cancelaciones</div>
+      <div class="val-cell">0.14%</div>
+      <div class="val-cell">~0%</div>
+      <div class="target-cell">≤ 0.7%</div>
+      <div><span class="badge-ok">✓ OK</span></div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">Cooking Time</div>
+      <div class="val-cell">15.05 min</div>
+      <div class="val-cell">15.14 min</div>
+      <div class="target-cell">15 min</div>
+      <div><span class="badge-warn">⚠ Límite</span></div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">Defect Rate</div>
+      <div class="val-cell">1.65%</div>
+      <div class="val-cell" style="color:var(--red-alert)">1.40%</div>
+      <div class="target-cell">≤ 1.2%</div>
+      <div><span class="badge-alert">✗ Alerta</span></div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">RT en tienda</div>
+      <div class="val-cell">4.27 min</div>
+      <div class="val-cell" style="color:var(--red-alert)">4.94 min</div>
+      <div class="target-cell">≤ 3 min</div>
+      <div><span class="badge-alert">✗ Alerta</span></div>
+    </div>
+    <div class="ops-table-row">
+      <div class="metric-name">Tiempo total entrega</div>
+      <div class="val-cell">45.76 min</div>
+      <div class="val-cell" style="color:var(--red-alert)">49.63 min</div>
+      <div class="target-cell">30 min</div>
+      <div><span class="badge-alert">✗ Crítico</span></div>
+    </div>
+  </div>
+
+  <!-- SUCURSALES -->
+  <div class="section-label">Desempeño por sucursal — mayo 2026</div>
+  <div class="stores-section">
+    <div class="stores-grid">
+      <div class="store-card top-oro">
+        <div class="store-name">Cuajimalpa</div>
+        <div class="store-badge sb-oro">🥇 Top Oro</div>
+        <div class="store-metric">$45.2K</div>
+        <div class="store-sublabel">Venta Neta</div>
+        <div class="store-mini-row">
+          <span>Órdenes</span><span class="store-mini-val">179</span>
+        </div>
+        <div class="store-mini-row">
+          <span>AOV</span><span class="store-mini-val">$252</span>
+        </div>
+        <div class="store-mini-row">
+          <span>DR</span><span class="store-mini-val" style="color:var(--green-ok)">0.0%</span>
+        </div>
+      </div>
+      <div class="store-card top-oro">
+        <div class="store-name">Polanco</div>
+        <div class="store-badge sb-oro">🥇 Top Oro</div>
+        <div class="store-metric">$31.6K</div>
+        <div class="store-sublabel">Venta Neta</div>
+        <div class="store-mini-row">
+          <span>Órdenes</span><span class="store-mini-val">139</span>
+        </div>
+        <div class="store-mini-row">
+          <span>AOV</span><span class="store-mini-val">$227</span>
+        </div>
+        <div class="store-mini-row">
+          <span>DR</span><span class="store-mini-val" style="color:var(--green-ok)">0.76%</span>
+        </div>
+      </div>
+      <div class="store-card basico">
+        <div class="store-name">Narvarte</div>
+        <div class="store-badge sb-basico">Básico</div>
+        <div class="store-metric">$46.5K</div>
+        <div class="store-sublabel">Venta Neta</div>
+        <div class="store-mini-row">
+          <span>Órdenes</span><span class="store-mini-val">158</span>
+        </div>
+        <div class="store-mini-row">
+          <span>AOV</span><span class="store-mini-val">$294</span>
+        </div>
+        <div class="store-mini-row">
+          <span>CT</span><span class="store-mini-val" style="color:var(--red-alert)">18.6 min</span>
+        </div>
+      </div>
+      <div class="store-card basico">
+        <div class="store-name">Miguel Ángel</div>
+        <div class="store-badge sb-basico">Básico</div>
+        <div class="store-metric">$26.7K</div>
+        <div class="store-sublabel">Venta Neta</div>
+        <div class="store-mini-row">
+          <span>Órdenes</span><span class="store-mini-val">110</span>
+        </div>
+        <div class="store-mini-row">
+          <span>AOV</span><span class="store-mini-val">$242</span>
+        </div>
+        <div class="store-mini-row">
+          <span>DR</span><span class="store-mini-val" style="color:var(--amber)">0.93%</span>
+        </div>
+      </div>
+      <div class="store-card alerta">
+        <div class="store-name">San Cosme</div>
+        <div class="store-badge sb-alerta">⚠ Alerta</div>
+        <div class="store-metric">$24.5K</div>
+        <div class="store-sublabel">Venta Neta</div>
+        <div class="store-mini-row">
+          <span>Órdenes</span><span class="store-mini-val">74</span>
+        </div>
+        <div class="store-mini-row">
+          <span>RT</span><span class="store-mini-val" style="color:var(--red-alert)">6.75 min</span>
+        </div>
+        <div class="store-mini-row">
+          <span>DR</span><span class="store-mini-val" style="color:var(--red-alert)">5.41%</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:10px; background:white; border-radius:12px; border:1.5px solid #ffe8ec; padding:12px 18px; display:flex; align-items:center; gap:12px;">
+      <span style="font-size:20px">🔴</span>
+      <div>
+        <div style="font-size:13px; font-weight:800; color:#c0002a">Cosme I — Sin actividad en mayo 2026</div>
+        <div style="font-size:12px; color:var(--gray-text); font-weight:600">0 órdenes · 0% availability · Reactivación inmediata = +50 órdenes estimadas (+7-8% volumen)</div>
+      </div>
+      <div style="margin-left:auto; background:#ffe8ec; color:#c0002a; font-size:11px; font-weight:800; padding:5px 12px; border-radius:20px; white-space:nowrap;">Prioridad #1</div>
+    </div>
+  </div>
+
+  <!-- BRECHAS -->
+  <div class="section-label">Brechas críticas a cerrar</div>
+  <div class="gaps-grid">
+    <div class="gap-card critical">
+      <div class="priority-badge pb-critical">🚨 Urgente</div>
+      <div class="gap-title">AOV en caída libre: $264 vs $332 histórico</div>
+      <div class="gap-desc">El ticket promedio cayó 20.4% vs abril y 17.3% vs el año pasado. Con 660 órdenes, se pierden ~$44K de venta mensual vs el nivel de marzo. La caída de AOV es el principal inhibidor del GMV aunque las órdenes crecen.</div>
+      <div class="tags-row">
+        <span class="tag">Bundles / combos</span>
+        <span class="tag">Add-ons visibles</span>
+        <span class="tag">No bajar precio base</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:90%"></div></div>
+    </div>
+    <div class="gap-card critical">
+      <div class="priority-badge pb-critical">🚨 Urgente</div>
+      <div class="gap-title">Tiempo de entrega: 49.6 min (target 30 min)</div>
+      <div class="gap-desc">66% por encima del objetivo. San Cosme (RT 6.75 min) y Cuajimalpa (RT 6.36 min) son los peores en espera. Narvarte tiene el cooking time más alto (18.6 min). Impacta conversión y recompra directamente.</div>
+      <div class="tags-row">
+        <span class="tag">Staffing 13-16h</span>
+        <span class="tag">Pre-producción caldos</span>
+        <span class="tag">Protocolo San Cosme</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:85%"></div></div>
+    </div>
+    <div class="gap-card critical">
+      <div class="priority-badge pb-critical">🚨 Urgente</div>
+      <div class="gap-title">Defect Rate 1.40% — sobre el límite de 1.2%</div>
+      <div class="gap-desc">San Cosme con 5.41% de DR (9× el promedio de Narvarte 0.64%). El tipo dominante es "bad item" (~72-83% de compensaciones). B&B tienen DR hasta 8% vs 2.3% en órdenes normales.</div>
+      <div class="tags-row">
+        <span class="tag">Audit calidad San Cosme</span>
+        <span class="tag">Checklist temperatura</span>
+        <span class="tag">Revisar B&B</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:80%"></div></div>
+    </div>
+    <div class="gap-card important">
+      <div class="priority-badge pb-important">⚡ Importante</div>
+      <div class="gap-title">47.4% son first orders — retención sin activar</div>
+      <div class="gap-desc">280 de 591 usuarios del mes son nuevos. La frecuencia es 1.12 pedidos/usuario y solo el 23.5% son retained. Con campañas de segunda compra se puede capturar un ciclo de retención inmediato.</div>
+      <div class="tags-row">
+        <span class="tag">Campaña 2ª compra</span>
+        <span class="tag">Fidelización Prime</span>
+        <span class="tag">CRM reactivados</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:65%"></div></div>
+    </div>
+    <div class="gap-card positive">
+      <div class="priority-badge pb-positive">✅ Palanca ofensiva</div>
+      <div class="gap-title">Conversión ATC: 35.7% — supera benchmark (29.8%)</div>
+      <div class="gap-desc">La conversión de add-to-cart supera el benchmark de la categoría, lo que indica intención de compra alta. Pero la SST→OPC oscila entre 20-33% semanalmente. Estabilizar al nivel de Cuajimalpa (28.75%).</div>
+      <div class="tags-row">
+        <span class="tag">Fotos actualizadas</span>
+        <span class="tag">Porciones claras</span>
+        <span class="tag">Horarios clave</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:55%"></div></div>
+    </div>
+    <div class="gap-card positive">
+      <div class="priority-badge pb-positive">✅ Palanca ofensiva</div>
+      <div class="gap-title">Top 3 productos concentran 25% del volumen</div>
+      <div class="gap-desc">Caldo de Pollo (189 piezas), Mole de Olla (129), Pozole Rojo (111). Los datos de venta cruzada muestran combos naturales. Crear bundles explícitos eleva AOV sin tocar precio base.</div>
+      <div class="tags-row">
+        <span class="tag">Bundle caldo + guarnición</span>
+        <span class="tag">Combo familiar</span>
+        <span class="tag">Panqué Elote +362%</span>
+      </div>
+      <div class="impact-bar-bg"><div class="impact-bar-fill" style="width:70%"></div></div>
+    </div>
+  </div>
+
+  <!-- USUARIOS -->
+  <div class="section-label">Análisis de usuarios</div>
+  <div class="users-section">
+    <div class="user-card">
+      <div class="user-card-title">Ciclo de vida de usuarios — mayo 2026</div>
+      <div class="lifecycle-row">
+        <div class="lc-dot" style="background:#fe663d"></div>
+        <div class="lc-label">Nuevos</div>
+        <div class="lc-count">280</div>
+        <div class="lc-pct">47.4%</div>
+        <div class="lc-delta-up">▲ vs abr</div>
+      </div>
+      <div class="lifecycle-row">
+        <div class="lc-dot" style="background:#ff3d55"></div>
+        <div class="lc-label">Reactivados</div>
+        <div class="lc-count">172</div>
+        <div class="lc-pct">29.1%</div>
+        <div class="lc-delta-up">▲ 37%</div>
+      </div>
+      <div class="lifecycle-row">
+        <div class="lc-dot" style="background:#4c2b8c"></div>
+        <div class="lc-label">Retenidos</div>
+        <div class="lc-count">139</div>
+        <div class="lc-pct">23.5%</div>
+        <div class="lc-delta-down">▼ vs mar</div>
+      </div>
+      <div style="margin-top:14px; background:var(--blue-pastel); border-radius:10px; padding:10px 14px;">
+        <div style="font-size:11px; font-weight:800; color:var(--text-blue); margin-bottom:4px;">OPORTUNIDAD: RETENCIÓN</div>
+        <div style="font-size:12px; color:var(--text-blue); font-weight:600;">Solo 1 de cada 4 usuarios es retenido. Activar campaña post-primera compra para convertir los 280 nuevos de mayo en retenidos de junio.</div>
+      </div>
+    </div>
+    <div class="user-card">
+      <div class="user-card-title">Prime vs No Prime — mayo 2026</div>
+      <div class="lifecycle-row">
+        <div class="lc-dot" style="background:#f8b76f"></div>
+        <div class="lc-label">Usuarios Prime</div>
+        <div class="lc-count">379</div>
+        <div class="lc-pct">68.8%</div>
+        <div class="lc-delta-down">▼ 5% órdenes</div>
+      </div>
+      <div class="lifecycle-row">
+        <div class="lc-dot" style="background:#e8e4de"></div>
+        <div class="lc-label">Usuarios No Prime</div>
+        <div class="lc-count">188</div>
+        <div class="lc-pct">31.2%</div>
+        <div class="lc-delta-up">▲ 41% vs LM</div>
+      </div>
+      <div style="margin-top:10px;">
+        <div class="invest-row">
+          <span class="invest-key">GMV Prime</span>
+          <span class="invest-val">$220,751</span>
+        </div>
+        <div class="invest-row">
+          <span class="invest-key">GMV No Prime</span>
+          <span class="invest-val">$101,898</span>
+        </div>
+        <div class="invest-row">
+          <span class="invest-key">Venta Prime</span>
+          <span class="invest-val">$120,549</span>
+        </div>
+      </div>
+      <div style="margin-top:10px; background:#fef9e7; border-radius:10px; padding:10px 14px;">
+        <div style="font-size:11px; font-weight:800; color:#856404; margin-bottom:4px;">OPORTUNIDAD: NO PRIME</div>
+        <div style="font-size:12px; color:#856404; font-weight:600;">Los No Prime crecen +41% en órdenes vs LM. Invertir en convertirlos a Prime aumentaría AOV y frecuencia.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOP PRODUCTOS -->
+  <div class="section-label">Top productos — mayo 2026</div>
+  <div class="productos-section">
+    <div class="productos-grid">
+      <div class="producto-card">
+        <div class="producto-rank">#1</div>
+        <div class="producto-name">Caldo de Pollo (700 ml)</div>
+        <div class="producto-piezas">189</div>
+        <div class="producto-piezas-label">piezas</div>
+        <div class="producto-delta delta-up">▲ 47.7% vs LM</div>
+      </div>
+      <div class="producto-card">
+        <div class="producto-rank">#2</div>
+        <div class="producto-name">Mole de Olla (700 ml)</div>
+        <div class="producto-piezas">129</div>
+        <div class="producto-piezas-label">piezas</div>
+        <div class="producto-delta delta-up">▲ 20.6% vs LM</div>
+      </div>
+      <div class="producto-card">
+        <div class="producto-rank">#3</div>
+        <div class="producto-name">Pozole Rojo (700 ml)</div>
+        <div class="producto-piezas">111</div>
+        <div class="producto-piezas-label">piezas</div>
+        <div class="producto-delta delta-up">▲ 63.2% vs LM</div>
+      </div>
+      <div class="producto-card">
+        <div class="producto-rank">#6</div>
+        <div class="producto-name">Gorditas de la Villa (10 pzs)</div>
+        <div class="producto-piezas">81</div>
+        <div class="producto-piezas-label">piezas</div>
+        <div class="producto-delta delta-up">▲ 58.8% vs LM</div>
+      </div>
+      <div class="producto-card" style="border: 1.5px solid var(--neon-start);">
+        <div class="producto-rank" style="color:#856404">🚀 #17</div>
+        <div class="producto-name">Panqué de Elote (1 pieza)</div>
+        <div class="producto-piezas">37</div>
+        <div class="producto-piezas-label">piezas</div>
+        <div class="producto-delta delta-up" style="color:var(--neon-start)">▲ 362.5% vs LM</div>
+      </div>
+    </div>
+    <div style="margin-top:10px; background:white; border-radius:12px; border:1.5px solid var(--gray-mid); padding:12px 18px; font-size:12px; color:var(--gray-text); font-weight:600;">
+      💡 <strong style="color:var(--text-dark)">Cross-sell identificado:</strong> Caldo de Pollo se combina naturalmente con Arroz a la Mexicana (50%) y Sopa de Milpa (50%). Mole de Olla con Pozole Blanco (50%). Formalizar como bundles en el menú = AOV +15% estimado.
+    </div>
+  </div>
+
+  <!-- MARKET SHARE -->
+  <div class="section-label">Participación de mercado — X-Rays Dashboard</div>
+  <div class="ms-section">
+    <div class="ms-card">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div>
+          <div style="font-size:14px; font-weight:900; color:var(--text-dark); margin-bottom:14px;">Market Share en Categoría (CDMX)</div>
+          <div class="ms-bar-row">
+            <div class="ms-label">May '26</div>
+            <div class="ms-bar-bg"><div class="ms-bar-fill" style="width:54%;background:linear-gradient(90deg,#fe663d,#ff3d55)">5.4%</div></div>
+            <div class="ms-val">5.4%</div>
+          </div>
+          <div class="ms-bar-row">
+            <div class="ms-label">Abr '26</div>
+            <div class="ms-bar-bg"><div class="ms-bar-fill" style="width:53%;background:linear-gradient(90deg,#fe663d,#ff3d55)">5.4%</div></div>
+            <div class="ms-val">5.4%</div>
+          </div>
+          <div class="ms-bar-row">
+            <div class="ms-label">Mar '26</div>
+            <div class="ms-bar-bg"><div class="ms-bar-fill" style="width:33%;background:#adb5bd">3.3%</div></div>
+            <div class="ms-val">3.3%</div>
+          </div>
+          <div class="ms-bar-row">
+            <div class="ms-label">Feb '26</div>
+            <div class="ms-bar-bg"><div class="ms-bar-fill" style="width:22%;background:#adb5bd">2.2%</div></div>
+            <div class="ms-val">2.2%</div>
+          </div>
+          <div class="ms-bar-row">
+            <div class="ms-label">Ene '26</div>
+            <div class="ms-bar-bg"><div class="ms-bar-fill" style="width:23%;background:#adb5bd">2.3%</div></div>
+            <div class="ms-val">2.3%</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:900; color:var(--text-dark); margin-bottom:14px;">Métricas de funel (X-Rays — abril 2026)</div>
+          <div class="invest-row">
+            <span class="invest-key">Venta Neta YTD</span>
+            <span class="invest-val">$2,390,932</span>
+          </div>
+          <div class="invest-row">
+            <span class="invest-key">Tráfico mensual</span>
+            <span class="invest-val">32,206</span>
+          </div>
+          <div class="invest-row">
+            <span class="invest-key">Tasa conversión</span>
+            <span class="invest-val">22.6%</span>
+          </div>
+          <div class="invest-row">
+            <span class="invest-key">Ticket promedio neto</span>
+            <span class="invest-val">$328</span>
+          </div>
+          <div class="invest-row">
+            <span class="invest-key">Órdenes totales</span>
+            <span class="invest-val">7,288</span>
+          </div>
+          <div class="invest-row">
+            <span class="invest-key">Tiendas creció / decreció</span>
+            <span class="invest-val">33 / 19</span>
+          </div>
+          <div style="margin-top:10px; background:var(--green-bg); border-radius:8px; padding:8px 12px; font-size:12px; color:var(--green-ok); font-weight:700;">
+            ▲ 97.5% vs LY en venta neta · ▲ 90.5% vs LY en órdenes
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAN 30/60/90 -->
+  <div class="section-label">Plan de acción — 30 / 60 / 90 días</div>
+  <div class="plan-section">
+    <div class="plan-columns">
+      <div class="plan-col">
+        <div class="plan-col-header h30">
+          <span>Primeros</span>
+          30 días — impacto inmediato
+        </div>
+        <div class="plan-items">
+          <div class="plan-item">
+            <div class="plan-num pn-30">1</div>
+            <div>
+              <div class="plan-text">Reactivar Cosme I (0 órdenes en mayo)</div>
+              <div class="plan-impact">+7-8% órdenes estimadas</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-30">2</div>
+            <div>
+              <div class="plan-text">Plan de calidad San Cosme: DR 5.4% → meta ≤1.2%</div>
+              <div class="plan-impact">Riesgo penalización Rappi</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-30">3</div>
+            <div>
+              <div class="plan-text">Crear 2 bundles en menú: caldo + guarnición</div>
+              <div class="plan-impact">AOV estimado +$40-50</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-30">4</div>
+            <div>
+              <div class="plan-text">Reducir RT en tienda: protocolos Cosme y Cuajimalpa</div>
+              <div class="plan-impact">4.94 min → meta 3 min</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-col">
+        <div class="plan-col-header h60">
+          <span>Semanas 5–8</span>
+          60 días — retención y frecuencia
+        </div>
+        <div class="plan-items">
+          <div class="plan-item">
+            <div class="plan-num pn-60">5</div>
+            <div>
+              <div class="plan-text">Campaña 2ª compra para 280 first-orders de mayo</div>
+              <div class="plan-impact">Retención +8-10 pts</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-60">6</div>
+            <div>
+              <div class="plan-text">Actualizar fotos y descripciones top 10 productos</div>
+              <div class="plan-impact">Conversión ATC estable</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-60">7</div>
+            <div>
+              <div class="plan-text">Staffing reforzado vie-sáb-dom · ventana 13–16h</div>
+              <div class="plan-impact">Tiempo entrega ↓5 min est.</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-60">8</div>
+            <div>
+              <div class="plan-text">Activar estrategia Rappi Prime (68% ya son Prime)</div>
+              <div class="plan-impact">GMV Prime +10% estimado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="plan-col">
+        <div class="plan-col-header h90">
+          <span>Semanas 9–12</span>
+          90 días — escala y expansión
+        </div>
+        <div class="plan-items">
+          <div class="plan-item">
+            <div class="plan-num pn-90">9</div>
+            <div>
+              <div class="plan-text">Evaluar apertura 7ª sucursal (zona Tlalpan/Xochimilco)</div>
+              <div class="plan-impact">Nueva microzone sin cubrir</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-90">10</div>
+            <div>
+              <div class="plan-text">Programa de reactivación para los 172 reactivados de mayo</div>
+              <div class="plan-impact">LTV + frecuencia</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-90">11</div>
+            <div>
+              <div class="plan-text">Menú de temporada + impulsar Panqué Elote (+362%)</div>
+              <div class="plan-impact">AOV + novedad</div>
+            </div>
+          </div>
+          <div class="plan-item">
+            <div class="plan-num pn-90">12</div>
+            <div>
+              <div class="plan-text">Benchmark operativo vs Cancino (CT ~31 min referencia)</div>
+              <div class="plan-impact">Competitividad operativa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METAS -->
+  <div class="metas-section">
+    <div class="metas-title">🎯 Meta agosto 2026 — Si se ejecuta el plan</div>
+    <div class="metas-subtitle">Proyección conservadora basada en cierres de brechas identificadas</div>
+    <div class="metas-grid">
+      <div class="meta-card">
+        <div class="meta-label">Venta mensual</div>
+        <div class="meta-val">$230K+</div>
+        <div class="meta-from">vs $174K mayo</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">AOV</div>
+        <div class="meta-val">$300+</div>
+        <div class="meta-from">vs $264 mayo</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Defect Rate</div>
+        <div class="meta-val">≤1.2%</div>
+        <div class="meta-from">Meta Rappi cumplida</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Tiempo entrega</div>
+        <div class="meta-val">≤40 min</div>
+        <div class="meta-from">vs 49.6 min mayo</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">
+    <span style="font-size:20px">🥸</span>
+    rappi
+  </div>
+  <div class="footer-note">Uso interno · KAM Analytics · Alma de Barro × Rappi MX · Mayo 2026</div>
+  <div class="footer-badge">Modo Interno 🔐</div>
+</div>
+
+</body>
+</html>
